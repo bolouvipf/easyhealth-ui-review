@@ -1,0 +1,341 @@
+/* ===== Styles spécifiques à la maquette de revue (ui-review) ===== */
+
+.demo-banner {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #14532d, #166534);
+  color: #fff;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.demo-banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: demo-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes demo-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.demo-banner-link {
+  color: #bbf7d0;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.demo-banner-link:hover {
+  text-decoration: underline;
+}
+
+.demo-nav {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.demo-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.demo-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 700;
+  color: var(--primary, #166534);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.demo-nav-links {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.demo-nav-links a {
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.demo-nav-links a:hover {
+  color: var(--primary, #166534);
+}
+
+.demo-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.demo-user-chip {
+  font-size: 0.82rem;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .demo-user-chip { display: none; }
+  .demo-banner { flex-wrap: wrap; text-align: center; }
+}
+
+/* ===== Hub (sommaire des écrans) ===== */
+
+.hub-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-header {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hub-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+}
+
+.hub-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--primary, #166534);
+}
+
+.hub-brand-sub {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.hub-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hub-main {
+  flex: 1;
+  padding: 2.5rem 1.5rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hub-main h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+  color: #0f172a;
+}
+
+.hub-subtitle {
+  color: #475569;
+  max-width: 720px;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.hub-section-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin: 0 0 1rem;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.9rem;
+}
+
+.hub-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  border-color: var(--primary, #166534);
+}
+
+.hub-card-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.hub-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.hub-card-title {
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+.hub-card-desc {
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.hub-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.hub-tag-public { background: #ecfdf5; color: #059669; }
+.hub-tag-auth { background: #eff6ff; color: #2563eb; }
+.hub-tag-connecté { background: #fef3c7; color: #b45309; }
+.hub-tag-admin { background: #fee2e2; color: #b91c1c; }
+
+.hub-hint {
+  margin-top: 2.2rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  color: #92400e;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.hub-footer {
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+/* ===== Encart identifiants de démo ===== */
+
+.demo-creds {
+  margin-top: 1.4rem;
+  border: 1px dashed #4ade80;
+  background: #f0fdf4;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.demo-creds-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.demo-creds-head strong {
+  font-size: 0.9rem;
+  color: #166534;
+}
+
+.demo-creds-head span:last-child {
+  font-size: 0.78rem;
+  color: #4b7a5e;
+}
+
+.demo-pill {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: #166534;
+  color: #fff;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+}
+
+.demo-creds-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .demo-creds-list { grid-template-columns: 1fr; }
+}
+
+.demo-cred {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.demo-cred:hover {
+  background: #dcfce7;
+}
+
+.demo-cred-role {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #14532d;
+}
+
+.demo-cred-email {
+  font-size: 0.78rem;
+  color: #1e40af;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.demo-cred-hint {
+  font-size: 0.72rem;
+  color: #64748b;
+}
