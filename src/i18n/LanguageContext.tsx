@@ -1,12 +1,13 @@
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from "react"
 import fr from "./fr.json"
 import en from "./en.json"
+import fon from "./fon.json"
 
 type Translations = Record<string, any>
 
 const STORAGE_KEY = "easyhealth_lang"
 
-const translations: Record<string, Translations> = { fr, en }
+const translations: Record<string, Translations> = { fon, fr, en }
 
 const BACKEND_MESSAGE_KEYS: Array<[string, string]> = [
   ["Si cet email existe, un lien de réinitialisation a été envoyé.", "backend.forgot_sent"],
@@ -19,7 +20,7 @@ const BACKEND_MESSAGE_KEYS: Array<[string, string]> = [
   ["Dossier désactivé avec succès", "backend.record_deactivated"],
 ]
 
-const LOCALES: Record<string, string> = { fr: "fr-FR", en: "en-US" }
+const LOCALES: Record<string, string> = { fon: "fr-FR", fr: "fr-FR", en: "en-US" }
 
 interface LanguageContextType {
   lang: string
@@ -52,7 +53,7 @@ function interpolate(message: string, params?: Record<string, string | number>):
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState(() => {
-    return localStorage.getItem(STORAGE_KEY) || navigator.language?.substring(0, 2) || "fr"
+    return localStorage.getItem(STORAGE_KEY) || "fon"
   })
 
   useEffect(() => {

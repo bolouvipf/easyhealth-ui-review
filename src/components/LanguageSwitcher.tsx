@@ -1,6 +1,7 @@
 import { useLanguage } from "../i18n/LanguageContext"
 
 const LANGUAGES = [
+  { code: "fon", label: "FON" },
   { code: "fr", label: "FR" },
   { code: "en", label: "EN" },
 ]

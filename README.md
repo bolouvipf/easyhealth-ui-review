@@ -2,22 +2,26 @@
 
 Cette application est une **copie fidèle de l'interface EasyHealth** alimentée par des **données fictives** (aucun backend, aucun compte réel, aucune donnée de santé réelle). Elle sert à **revue l'interface** avant validation.
 
+## Pourquoi le Fon ?
+
+L'application est conçue pour le Bénin. Cette maquette de revue est **traduite en Fon par défaut** (sélecteur FON / FR / EN disponible sur tous les écrans) afin qu'un **locuteur natif Fon** puisse valider la compréhension et la qualité des textes, boutons et messages de l'interface.
+
 ## Consignes pour le revueur (natif)
 
 1. Ouvrez l'URL de la maquette : **https://bolouvipf.github.io/easyhealth-ui-review/** (l'URL sera active après le premier déploiement automatique).
 2. Commencez par la page **Sommaire** : elle liste les 16 écrans à parcourir (landing, connexion, inscription, tableau de bord médecin, fiche patient, espace patient, partage sécurisé, journal d'audit, administration, FAQ, confidentialité, guides, page 404...).
 3. Cliquez sur chaque carte pour ouvrir l'écran. Un bandeau vert « MODE DÉMO » rappelle en permanence que les données sont fictives.
-4. Pour changer de profil (médecin, infirmier, agent communautaire, patient, administrateur) :
-   - cliquez sur **Quitter** (bouton de déconnexion en haut),
-   - puis sur **Connexion** : une carte « Comptes de démonstration » liste les comptes ; cliquez sur un compte pour remplir le formulaire automatiquement, puis connectez-vous (mot de passe affiché).
+4. **Langue** : l'interface s'affiche en **Fon** par défaut. Utilisez le sélecteur FON / FR / EN pour comparer. Signalez tout texte Fon incorrect, ambigu ou incompréhensible.
+5. Pour changer de profil (médecin, infirmier, agent communautaire, patient, administrateur) :
+   - cliquez sur **Ɖɛ̀ mɛ** (bouton de déconnexion en haut),
+   - puis sur **Xɔ̀ mɛ** (Connexion) : une carte « Comptes de démonstration » liste les comptes ; cliquez sur un compte pour remplir le formulaire automatiquement, puis connectez-vous (mot de passe affiché).
    - L'**espace patient** et la **connexion admin** s'explorent de la même façon.
-5. Vérifiez les points suivants en priorité :
-   - **Boutons et actions** : cliquables, libellés compréhensibles, retour visuel.
+6. Vérifiez les points suivants en priorité :
+   - **Boutons et actions** : cliquables, libellés compréhensibles en Fon, retour visuel.
    - **Formulaires** : champs clairs, messages d'erreur utiles, validation cohérente.
    - **Responsive** : redimensionnez la fenêtre ou ouvrez sur mobile (menu hamburger, cartes, tableaux).
-   - **Langues** : le sélecteur FR/EN est disponible sur tous les écrans ; basculez les deux langues pour vérifier les traductions.
    - **Accessibilité** : contrastes, libellés des boutons, navigation clavier (tabulation).
-6. Consignez vos observations par écran (n° d'écran, constat, suggestion). Remettez le rapport au responsable du projet.
+7. Consignez vos observations par écran (n° d'écran, constat, suggestion). Remettez le rapport au responsable du projet.
 
 ## Comptes de démonstration
 
@@ -47,6 +51,6 @@ Le déploiement sur GitHub Pages est automatique à chaque push sur `main` (work
 - `src/services/api.ts` — API **mockée** (mêmes signatures que l'API réelle, latence simulée, aucune requête réseau).
 - `src/mock/data.ts` — données fictives (patients, entrées cliniques, audit, statistiques).
 - `src/hooks/useAuth.tsx` — authentification démo (session locale, aucun compte réel).
-- `src/i18n/` — dictionnaires FR/EN (identiques à l'application réelle).
+- `src/i18n/` — dictionnaires **Fon / Français / Anglais** (identiques à l'application réelle, + Fon pour la revue natif).
 
 > ⚠️ Aucune donnée de santé réelle n'est stockée ni transmise. Cette maquette ne doit jamais être connectée à l'API de production.
